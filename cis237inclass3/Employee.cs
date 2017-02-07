@@ -8,12 +8,14 @@ namespace cis237inclass3
 {
     class Employee
     {
+        //Constant for the amount of weeks in a year
+        protected const decimal WEEKS_PER_YEAR = 52;
+
         //*****************************
         //Variable / Backing fields
         //*****************************
         private string firstName;
         private string lastName;
-        private decimal weeklySalary;
 
         //*****************************
         //Properties
@@ -30,38 +32,24 @@ namespace cis237inclass3
             set { lastName = value; }
         }
 
-        public decimal WeeklySalary
-        {
-            get { return weeklySalary; }
-            set { weeklySalary = value; }
-        }
-
         //******************************
         //Public Methods
         //******************************
-        public string FirstAndLastName()
+        private string FirstAndLastName()
         {
             return firstName + " " + lastName;
         }
 
         public override string ToString()
         {
-            return firstName + " " + lastName + " " + weeklySalary.ToString("C");
+            return FirstAndLastName();
         }
 
-        //*****************************
-        //Constructors
-        //*****************************
-        public Employee(string FirstName, string LastName, decimal WeeklySalary)
+        //Constructor
+
+        public Employee(string FirstName, string LastName)
         {
             this.firstName = FirstName;
             this.lastName = LastName;
-            this.weeklySalary = WeeklySalary;
         }
-
-        public Employee()
-        {
-            //Do Nothing
-        }
-    }
 }

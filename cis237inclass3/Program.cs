@@ -13,22 +13,16 @@ namespace cis237inclass3
             //Make a new instance of the User Interface class
             UserInterface ui = new UserInterface();
 
-            //Here is a new employee being created using the default
-            //constructor that we wrote in the Employee class
-            //Even though we aren't using it, I want you to see a single instance
-            //of one vs an array of them.
-            Employee myEmployee = new Employee();
-
             //Let's make an array to hold a bunch of instances of the Employee class
-            Employee[] employees = new Employee[10];
+            SalaryEmployee[] employees = new SalaryEmployee[10];
 
             //Let's add some employees to our array
-            employees[0] = new Employee("David", "Barnes", 835.00m);
-            employees[1] = new Employee("James", "Kirk", 453.00m);
-            employees[2] = new Employee("Jean-Luc", "Picard", 290.00m);
-            employees[3] = new Employee("Benjamin", "Sisko", 587.00m);
-            employees[4] = new Employee("Kathryn", "Janeway", 194.00m);
-            employees[5] = new Employee("Johnathan", "Archer", 135.00m);
+            employees[0] = new SalaryEmployee("David", "Barnes", 835.00m);
+            employees[1] = new SalaryEmployee("James", "Kirk", 453.00m);
+            employees[2] = new SalaryEmployee("Jean-Luc", "Picard", 290.00m);
+            employees[3] = new SalaryEmployee("Benjamin", "Sisko", 587.00m);
+            employees[4] = new SalaryEmployee("Kathryn", "Janeway", 194.00m);
+            employees[5] = new SalaryEmployee("Johnathan", "Archer", 135.00m);
 
 
             //Get some input from the user
@@ -44,7 +38,7 @@ namespace cis237inclass3
                     string outputString = "";
 
                     //Print out the employees in the array
-                    foreach (Employee employee in employees)
+                    foreach (SalaryEmployee employee in employees)
                     {
                         if (employee != null)
                         {
