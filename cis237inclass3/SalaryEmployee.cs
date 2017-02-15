@@ -33,8 +33,21 @@ namespace cis237inclass3
 
         public override string ToString()
         {
-            return base.ToString() + " " + weeklySalary.ToString("C");
+            return base.ToString() + " " + Salary.ToString("C");
         }
+
+        //this is the clone method that we had to write an implementation for 
+        //because its parent class has declared the method abostract which the interface needs implemented.
+        public override string GetFormattedSalary()
+        {
+            return Salary.ToString("C");
+        }
+
+        public override object Clone()
+        {
+            return new SalaryEmployee(this.FirstName, this.LastName, weeklySalary);
+        }
+
 
         //*****************************
         //Constructors

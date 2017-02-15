@@ -8,8 +8,7 @@ namespace cis237inclass3
 {
     class HourlyEmployee : Employee
     {
-        //Constant for the amount of weeks in a year
-        private const decimal WEEKS_PER_YEAR = 52;
+      
         //*****************************
         //Variable / Backing fields
         //*****************************
@@ -37,13 +36,24 @@ namespace cis237inclass3
             return base.ToString() + " " + Salary.ToString("C");
         }
 
+        public override string GetFormattedSalary()
+        {
+            return (this.hoursPerWeek*this.hourlyRate)+ "*" + WEEKS_PER_YEAR + " = " + Salary.ToString("C");
+        }
+
+        public override object Clone()
+        {
+            return new HourlyEmployee(this.FirstName, this.LastName, hoursPerWeek, hourlyRate);
+         }
+
+
         //*****************************
         //Constructors
         //*****************************
         /*Declare a 4 Parameter constructor that takes everthing that we need. Then calls teh parenter constructor to have
          the parent take care of assigning the passed in first and last name variables.
          This is done by adding " : base(parameter, parameter)  after the constructor defition*/
-        
+
         public HourlyEmployee(string FirstName, string LastName, 
                                 decimal HoursPerWeek, decimal HourlyRate) :
                                     base(FirstName, LastName)

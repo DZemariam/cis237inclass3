@@ -24,7 +24,7 @@ namespace cis237inclass3
             String input = Console.ReadLine();
 
             //While the input is not valid re-get the input
-            while (input != "1" && input != "2")
+            while (input != "1" && input != "2" && input != "3")
             {
                 //Print Error message
                 this.PrintErrorMessage();
@@ -51,7 +51,8 @@ namespace cis237inclass3
         {
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Print List");
-            Console.WriteLine("2. Exit");
+            Console.WriteLine("2. Clone First Employee");
+            Console.WriteLine("3. Exit");
         }
 
         private void PrintErrorMessage()
